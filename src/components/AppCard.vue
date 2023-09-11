@@ -41,7 +41,6 @@ export default {
         </div>
         <div class="card-footer d-flex justify-content-between mt-3 align-items-center border-0 bg-light">
             <div>
-                <strong>Technologies: </strong>
                 <span v-if="project.technologies" v-for="technology in project.technologies"
                     :class="'bg-' + technology.color" class="rounded mx-1 py-1 px-2 text-white">{{ technology.label
                     }}</span>
