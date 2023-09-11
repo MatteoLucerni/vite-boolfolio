@@ -25,7 +25,10 @@ export default {
         console.log(this.projects);
 
         this.isLoading = false
-      })
+      }).catch(err => console.error(err))
+        .then(res => {
+          this.isLoading = false
+        })
     }
   },
   created() {
@@ -39,11 +42,12 @@ export default {
     <AppLoader v-if="isLoading" />
     <div v-else>
       <h1 class="text-danger text-center mt-5">Projects</h1>
-      <ul class="mt-5 list-unstyled">
+      <ul v-if="projects.length" class="mt-5 list-unstyled">
         <li class="my-3" :key="project.id" v-for="project in projects">
           <AppCard :project="project" />
         </li>
       </ul>
+      <h3 class="text-center">No projects</h3>
     </div>
   </div>
 </template>
