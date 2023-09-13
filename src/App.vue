@@ -10,7 +10,10 @@ export default {
   data() {
     return {
       endpoint: 'http://127.0.0.1:8000/api/projects',
-      projects: [],
+      projects: {
+        data: [],
+        links: []
+      },
       isLoading: true
     }
   },
@@ -20,7 +23,10 @@ export default {
       axios.get(this.endpoint).then((res) => {
         console.log(res.data);
 
-        this.projects = res.data.projects.data
+        this.projects = {
+          data: res.data.projects.data,
+          links: res.data.projects.links
+        }
 
         console.log(this.projects);
 
@@ -42,8 +48,8 @@ export default {
     <AppLoader v-if="isLoading" />
     <div v-else>
       <h1 class="text-danger text-center mt-5">Projects</h1>
-      <ul v-if="projects.length" class="mt-5 list-unstyled">
-        <li class="my-3" :key="project.id" v-for="project in projects">
+      <ul v-if="projects.data.length" class="mt-5 list-unstyled">
+        <li class="my-3" :key="project.id" v-for="project in projects.data">
           <AppCard :project="project" />
         </li>
       </ul>
