@@ -35,7 +35,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="card-body">
+        <div v-if="!isIndex" class="card-body">
             <p>
                 {{ project.description }}
             </p>
@@ -51,7 +51,7 @@ export default {
                     }}</span>
                 <span v-else>-</span>
             </div>
-            <div>
+            <div v-if="!isIndex">
                 Creazione: {{ project.created_at }} <br>
                 Ultima Modifica: {{ project.updated_at }}
             </div>
