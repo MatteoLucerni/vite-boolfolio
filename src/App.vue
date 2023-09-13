@@ -9,7 +9,6 @@ export default {
   },
   data() {
     return {
-      endpoint: 'http://127.0.0.1:8000/api/projects',
       projects: {
         data: [],
         links: []
@@ -18,9 +17,9 @@ export default {
     }
   },
   methods: {
-    fetchProjects() {
+    fetchProjects(endpoint = 'http://127.0.0.1:8000/api/projects') {
       this.isLoading = true
-      axios.get(this.endpoint).then((res) => {
+      axios.get(endpoint).then((res) => {
         console.log(res.data);
 
         this.projects = {
@@ -61,7 +60,8 @@ export default {
       <ul class="pagination">
         <li class="page-item" :class="[{ active: link.active }, { disabled: !link.url }]" v-for="link in projects.links"
           :key="link.label">
-          <button class="page-link">{{ link.label }}</button>
+          <button type="button" :disabled="!link.url" @click="fetchProjects(link.url)" class="page-link">{{ link.label
+          }}</button>
         </li>
       </ul>
     </nav>
