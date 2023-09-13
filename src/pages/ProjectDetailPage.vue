@@ -25,8 +25,7 @@ export default {
                 this.project = res.data;
                 console.log(this.project);
             }).catch(err => {
-                console.error(err)
-
+                this.$router.push({ name: 'not-found' })
             })
                 .then(() => {
                     this.isLoading = false
