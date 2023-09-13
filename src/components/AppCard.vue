@@ -22,9 +22,11 @@ export default {
                 {{ project.title }}
             </h2>
             <div class="d-flex">
-                <p v-if="project.type" :style="{ 'border': '1px solid ' + project.type.color, 'color': project.type.color }"
-                    class="d-flex rounded align-items-center m-0 px-3">
-                    {{ project.type.label }}</p>
+                <RouterLink :style="{ 'border': '1px solid ' + project.type.color, 'color': project.type.color }"
+                    class="d-flex rounded align-items-center px-3"
+                    :to="{ name: 'projects-by-type', params: { id: project.type?.id } }" v-if="project.type">
+                    <p class="m-0">{{ project.type.label }}</p>
+                </RouterLink>
                 <p v-else-if="type" :style="{ 'border': '1px solid ' + type.color, 'color': type.color }"
                     class="d-flex rounded align-items-center m-0 px-3">
                     {{ type.label }}</p>

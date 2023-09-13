@@ -41,7 +41,7 @@ export default {
     <AppLoader v-if="isLoading" />
     <div v-else>
         <h1 class="text-danger text-center my-5">{{ type.label }} projects</h1>
-
+        <button @click="$router.push({ name: 'home' })" class="mt-5 btn btn-secondary mt-4">Go back to home</button>
         <ul v-if="projectsByType" class="mt-5 list-unstyled">
             <li class="my-3" :key="project.id" v-for="project in projectsByType">
                 <AppCard :type="type" :project="project" />
@@ -49,6 +49,7 @@ export default {
         </ul>
         <h3 v-else class="text-center">No projects</h3>
     </div>
+    <button @click="$router.push({ name: 'home' })" class="my-5 btn btn-secondary mt-4">Go back to home</button>
 </template>
 
 <style scoped></style>

@@ -40,7 +40,7 @@ export default {
     <h1 class="text-center my-5">Project Details</h1>
     <AppLoader v-if="isLoading && !project" />
     <AppCard v-if="!isLoading && project" :project="project" />
-    <button @click="$router.push({ name: 'home' })" class="btn btn-secondary mt-4">Go back</button>
+    <button @click="$router.push({ name: 'home' })" class="btn btn-secondary mt-4">Go back to home</button>
 </template>
 
 <style scoped></style>
