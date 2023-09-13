@@ -47,6 +47,18 @@ export default {
     <AppLoader v-if="isLoading" />
     <div v-else>
       <h1 class="text-danger text-center mt-5">Projects</h1>
+
+      <!-- Pagination -->
+      <nav class="d-flex justify-content-end mt-4" aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item" :class="[{ active: link.active }, { disabled: !link.url }]" v-for="link in projects.links"
+            :key="link.label">
+            <button type="button" :disabled="!link.url" @click="fetchProjects(link.url)" class="page-link">{{ link.label
+            }}</button>
+          </li>
+        </ul>
+      </nav>
+
       <ul v-if="projects.data.length" class="mt-5 list-unstyled">
         <li class="my-3" :key="project.id" v-for="project in projects.data">
           <AppCard :project="project" />
