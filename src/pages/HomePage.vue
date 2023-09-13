@@ -22,14 +22,11 @@ export default {
         fetchProjects(endpoint = 'http://127.0.0.1:8000/api/projects') {
             this.isLoading = true
             axios.get(endpoint).then((res) => {
-                console.log(res.data);
 
                 this.projects = {
                     data: res.data.projects.data,
                     links: res.data.projects.links
                 }
-
-                console.log(this.projects);
 
                 this.isLoading = false
             }).catch(err => console.error(err))

@@ -21,9 +21,7 @@ export default {
             this.isLoading = true;
             const endpoint = this.$route.params.id;
             axios.get(apiBaseUri + endpoint).then(res => {
-                console.log(res.data);
                 this.project = res.data;
-                console.log(this.project);
             }).catch(err => {
                 this.$router.push({ name: 'not-found' })
             })
@@ -34,7 +32,6 @@ export default {
     },
     created() {
         this.getProject();
-        console.log('done');
     }
 }
 </script>
