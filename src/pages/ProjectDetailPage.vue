@@ -19,7 +19,7 @@ export default {
     methods: {
         getProject() {
             this.isLoading = true;
-            const endpoint = this.$route.params.id;
+            const endpoint = this.$route.params.slug;
             axios.get(apiBaseUri + endpoint).then(res => {
                 this.project = res.data;
             }).catch(err => {

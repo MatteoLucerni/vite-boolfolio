@@ -41,7 +41,8 @@ export default {
             </p>
         </div>
         <div class="card-footer d-flex justify-content-between mt-3 align-items-center border-0 bg-light">
-            <RouterLink v-if="isIndex" class="btn btn-primary" :to="{ name: 'project-detail', params: { id: project.id } }">
+            <RouterLink v-if="isIndex" class="btn btn-primary"
+                :to="{ name: 'project-detail', params: { slug: project.slug } }">
                 Details
             </RouterLink>
             <div>
