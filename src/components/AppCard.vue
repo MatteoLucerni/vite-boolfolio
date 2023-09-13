@@ -1,6 +1,7 @@
 <script>
 export default {
     props: {
+        type: Object,
         project: Object,
         isIndex: Boolean
     },
@@ -24,6 +25,9 @@ export default {
                 <p v-if="project.type" :style="{ 'border': '1px solid ' + project.type.color, 'color': project.type.color }"
                     class="d-flex rounded align-items-center m-0 px-3">
                     {{ project.type.label }}</p>
+                <p v-else-if="type" :style="{ 'border': '1px solid ' + type.color, 'color': type.color }"
+                    class="d-flex rounded align-items-center m-0 px-3">
+                    {{ type.label }}</p>
                 <p v-else style="background-color: lightgray"
                     class="d-flex rounded border border-dark align-items-center m-0 px-3">
                     None</p>
