@@ -53,7 +53,7 @@ export default {
 
         <ul v-if="projects.data.length" class="mt-5 list-unstyled">
             <li class="my-3" :key="project.id" v-for="project in projects.data">
-                <AppCard :project="project" />
+                <AppCard :is-index="true" :project="project" />
             </li>
         </ul>
         <h3 v-else class="text-center">No projects</h3>

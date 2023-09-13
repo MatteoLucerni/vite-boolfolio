@@ -1,7 +1,8 @@
 <script>
 export default {
     props: {
-        project: Object
+        project: Object,
+        isIndex: Boolean
     },
     data() {
         return {
@@ -40,7 +41,8 @@ export default {
             </p>
         </div>
         <div class="card-footer d-flex justify-content-between mt-3 align-items-center border-0 bg-light">
-            <RouterLink class="btn btn-primary" :to="{ name: 'project-detail', params: { id: project.id } }">Details
+            <RouterLink v-if="isIndex" class="btn btn-primary" :to="{ name: 'project-detail', params: { id: project.id } }">
+                Details
             </RouterLink>
             <div>
                 <span v-if="project.technologies" v-for="technology in project.technologies"

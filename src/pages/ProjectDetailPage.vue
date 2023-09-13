@@ -24,7 +24,10 @@ export default {
                 console.log(res.data);
                 this.project = res.data;
                 console.log(this.project);
-            }).catch(err => { console.error(err) })
+            }).catch(err => {
+                console.error(err)
+
+            })
                 .then(() => {
                     this.isLoading = false
                 })
