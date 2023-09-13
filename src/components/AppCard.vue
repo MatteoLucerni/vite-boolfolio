@@ -40,6 +40,8 @@ export default {
             </p>
         </div>
         <div class="card-footer d-flex justify-content-between mt-3 align-items-center border-0 bg-light">
+            <RouterLink class="btn btn-primary" :to="{ name: 'project-detail', params: { id: project.id } }">Details
+            </RouterLink>
             <div>
                 <span v-if="project.technologies" v-for="technology in project.technologies"
                     :class="'bg-' + technology.color" class="rounded mx-1 py-1 px-2 text-white">{{ technology.label
