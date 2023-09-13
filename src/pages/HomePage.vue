@@ -45,7 +45,7 @@ export default {
     <AppLoader v-if="isLoading" />
     <div v-else>
         <h1 class="text-danger text-center my-5">Projects</h1>
-
+        <p class="text-end text-secondary">(Click on a type to filter by it)</p>
         <AppPagination :links="projects.links" @page-changed="fetchProjects" />
 
         <ul v-if="projects.data.length" class="mt-5 list-unstyled">
