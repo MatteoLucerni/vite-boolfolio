@@ -13,6 +13,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomePage },
     { path: '/contact', name: 'contact', component: ContactPage },
     { path: '/not-found', name: 'not-found', component: NotFoundPage },
+    { path: '/:pathMatch(.*)*', redirect: '/not-found' },
   ],
 });
 
