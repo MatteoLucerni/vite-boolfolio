@@ -53,8 +53,18 @@ export default {
           <AppCard :project="project" />
         </li>
       </ul>
-      <h3 class="text-center">No projects</h3>
+      <h3 v-else class="text-center">No projects</h3>
     </div>
+
+    <!-- Pagination -->
+    <nav class="d-flex justify-content-end mt-4" aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item" :class="[{ active: link.active }, { disabled: !link.url }]" v-for="link in projects.links"
+          :key="link.label">
+          <button class="page-link">{{ link.label }}</button>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
