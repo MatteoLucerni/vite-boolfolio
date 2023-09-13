@@ -5,10 +5,11 @@ export default {
 </script>
 
 <template>
-    <div class="vh-100 d-flex justify-content-center align-items-center">
-        <h3 class="text-danger fw-bolder">
+    <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+        <h3>
             404 | Page not found
         </h3>
+        <button @click="$router.back()" class="btn btn-secondary mt-4">Go back</button>
     </div>
 </template>
 
