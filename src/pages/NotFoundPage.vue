@@ -9,7 +9,7 @@ export default {
         <h3>
             404 | Page not found
         </h3>
-        <button @click="$router.back()" class="btn btn-secondary mt-4">Go back</button>
+        <button @click="$router.push({ name: 'home' })" class="btn btn-secondary mt-4">Go back home</button>
     </div>
 </template>
 
