@@ -18,7 +18,7 @@ export default {
 
 <template>
     <h1 class="my-5 text-center">Contact Us</h1>
-    <form action="" method="post">
+    <form>
         <!-- email -->
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
