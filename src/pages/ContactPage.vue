@@ -54,6 +54,7 @@ export default {
                 Subscribe to Boolfolio Newsletter
             </label>
         </div>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
     </form>
 </template>
 
