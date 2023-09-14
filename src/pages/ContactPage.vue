@@ -1,5 +1,12 @@
 <script>
 import axios from 'axios';
+const endpoint = 'http://127.0.0.1:8000/api/contact-message';
+const emptyForm = {
+    email: '',
+    subject: '',
+    message: '',
+    newsletter: false
+};
 export default {
     name: 'ContactPage',
     components: {
@@ -7,23 +14,23 @@ export default {
     },
     data() {
         return {
-            form: {
-                email: '',
-                subject: '',
-                message: '',
-                newsletter: false,
-            }
+            form: emptyForm
         }
     },
     methods: {
-
+        sendForm() {
+            axios.post(endpoint, this.form)
+                .then(() => { this.form = emptyForm })
+                .catch((err) => { console.error(err) })
+                .then(() => { })
+        }
     }
 }
 </script>
 
 <template>
     <h1 class="my-5 text-center">Contact Us</h1>
-    <form>
+    <form @submit.prevent="sendForm">
         <!-- email -->
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
