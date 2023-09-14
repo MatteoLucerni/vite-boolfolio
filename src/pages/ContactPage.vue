@@ -22,7 +22,7 @@ export default {
         <!-- email -->
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
-            <input name="email" type="email" class="form-control" id="email" required>
+            <input type="email" class="form-control" id="email" required>
             <div id="emailHelp" class="form-text">We will recontact you from this email address</div>
         </div>
         <!-- subject -->
@@ -33,11 +33,11 @@ export default {
         <!-- message -->
         <div class="mb-3">
             <label for="message" class="form-label">Content</label>
-            <textarea class="form-control" id="message" name="message" required></textarea>
+            <textarea rows="7" class="form-control" id="message" required></textarea>
         </div>
         <!-- newsletter -->
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" name="newsletter" id="newsletter">
+            <input class="form-check-input" type="checkbox" id="newsletter">
             <label class="form-check-label" for="newsletter">
                 Subscribe to Boolfolio Newsletter
             </label>
