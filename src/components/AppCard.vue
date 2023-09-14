@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: 'AppCard',
     props: {
         type: Object,
         project: Object,
@@ -10,7 +11,13 @@ export default {
 
         }
     },
-    methods: {
+    computed: {
+        projectDate() {
+            let date = new Date(this.project.created_at);
+            const timestamp = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+
+            return timestamp;
+        }
     }
 }
 </script>
@@ -58,8 +65,7 @@ export default {
                 <span v-else>-</span>
             </div>
             <div v-if="!isIndex">
-                Creazione: {{ project.created_at }} <br>
-                Ultima Modifica: {{ project.updated_at }}
+                Creation date: {{ projectDate }}
             </div>
         </div>
     </div>
